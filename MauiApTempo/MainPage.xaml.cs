@@ -6,7 +6,6 @@ namespace MauiApTempo
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
@@ -42,9 +41,8 @@ namespace MauiApTempo
                     }
                     else
                     {
-                        HttpResponseMessage.
-
-                        lbl_res.Text = "sem dados de previsão";
+                            
+                            lbl_res.Text = "Sem dados de Previsão";
 
                     }
 
@@ -57,7 +55,8 @@ namespace MauiApTempo
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Oh NaO", ex.Message, "OK");
+                await DisplayAlert("Atenção", ex.Message, "OK");
+                lbl_res.Text = "Erro ao buscar previsão.";
             }
         }
     }
